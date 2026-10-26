@@ -10,7 +10,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model EnrollmentData {
@@ -40,6 +39,13 @@ enum Major {
   ComputerScience
 }
 
+enum Instructor {
+  Conner
+  Moore
+  Morita
+  Port
+}
+
 model StudentData {
   id      Int     @id @default(autoincrement())
   name    String
@@ -49,4 +55,5 @@ model StudentData {
   level   Level
   gpa     Int
   major   Major
+  instructor Instructor
 }
